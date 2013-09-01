@@ -1,9 +1,5 @@
 function Node(e, n){
 	
-	this.element;
-
-	this.nextNode;
-
     this.element = e;
 
     this.nextNode = n;
@@ -14,5 +10,13 @@ function Node(e, n){
 
     this.getNextNode = function(){
     	return this.nextNode;
-    };	
+    };
+
+    this.setElement = function(e){
+    	this.element = e;
+    };
+
+    this.setNextNode= function(n){
+    	this.nextNode = n;
+    }
 };
