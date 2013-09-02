@@ -1,17 +1,35 @@
 
 function Stack() {
 
-    this.val;
+    this.top;
+   
 
-    this.push = function(elem) {
-        this.val = elem;
+    this.push = function (elem) {
+        
+        if (this.top == undefined) {
+            this.top = new Node(elem);
+
+        } else {
+            
+
+            var oldTop = this.top;
+            var newNode = new Node(elem, oldTop);
+            this.top = newNode;
+        }
+        
     };
 
     this.pop = function () {
-        if (typeof this.val == "undefined") {
+        if ( this.top == undefined) {
             return null;
         } else {
-            return this.val;
+
+            var oldtop = this.top;
+            oldtop.setNextNode(null);
+
+            this.top = oldtop.getNextNode();
+
+            return oldtop.getElement();
         }
     };
 
