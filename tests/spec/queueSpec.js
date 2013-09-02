@@ -215,4 +215,50 @@ it("Should be Able to queue two booleans and deQueue 2 booleans",function(){
 
 
 
+	it("Should be Able to queueing deQueueing and queueing and deQueueing",function(){
+		var myQueue = new Queue()
+		myQueue.enQueue(1);
+		myQueue.enQueue(2);
+
+		myQueue.deQueue();
+
+		myQueue.enQueue(3);
+
+		expect(myQueue.deQueue()).toEqual(2);
+	});
+
+
+
+it("Should be Able to queueing deQueueing to empty and then enqueuing and deQueueing a single item ",function(){
+		var myQueue = new Queue()
+		myQueue.enQueue(1);
+		myQueue.enQueue(2);
+
+		myQueue.deQueue();
+		myQueue.deQueue();	
+
+		myQueue.enQueue(3);
+
+		expect(myQueue.deQueue()).toEqual(3);
+	});
+
+
+it("Should be able to handle different types",function(){
+		var myQueue = new Queue()
+		myQueue.enQueue(1);
+		myQueue.enQueue("Dave");
+		myQueue.enQueue(true);
+
+		myQueue.deQueue();
+
+		expect(myQueue.deQueue()).toEqual("Dave");
+	});
+
+
+
+
+
+
+
+
 })
