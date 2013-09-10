@@ -1,29 +1,34 @@
 function List() {
 
     this.firstNode = null;
-    
-    this.Append = function (value) {
+    this.lastNode = null;
+
+    this.Append = function(value) {
         if (this.firstNode == null) {
             this.firstNode = new Node(value);
+            this.lastNode = this.firstNode;
         } else {
-            var oldTop = this.firstNode;
             var newNode = new Node(value);
-            newNode.setNextNode(oldTop);
-            this.firstNode = newNode;
+            this.lastNode.setNextNode(newNode);
+            this.lastNode = newNode;
         }
     };
     
     this.Prepend = function (value) {
         if (this.firstNode == null) {
             this.firstNode = new Node(value);
+        } else {
+            var newNode = new Node(value);
+            newNode.setNextNode(this.firstNode);
+            this.firstNode = newNode;
         }
     };
 
-    this.isEmpty = function() {
+    this.isEmpty = function () {
         return this.firstNode == null;
     };
 
-    this.Head = function() {
+    this.Head = function () {        
         if (this.firstNode == null) {
             return null;
         } else {
@@ -37,6 +42,7 @@ function List() {
 
     this.Tail = function () {
         return null;
+        //return null;
     };
 
 }

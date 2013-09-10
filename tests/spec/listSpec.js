@@ -9,13 +9,14 @@ describe("List",function(){
 	    var myList = new List();
 	    expect(myList.Head()).toBeNull();
 	});
-
-
+    
 	it("should be able to do handle an empty List when Tail is called", function () {
 	    var myList = new List();
 	    expect(myList.Tail()).toBeNull();
 	});
     
+    // Append - Head
+
 	it("should be able to append one number and not be empty", function () {
 	    var myList = new List();
 	    myList.Append(3);
@@ -28,11 +29,6 @@ describe("List",function(){
 	    expect(myList.Head()).toEqual(3);
 	});
     
-	it("should be able to append one number and then return null via Tail", function () {
-	    var myList = new List();
-	    myList.Append(3);
-	    expect(myList.Tail()).toEqual(null);
-	});
     
 	it("should be able to append one number then Head() once and be be empty", function () {
 	    var myList = new List();
@@ -63,23 +59,35 @@ describe("List",function(){
 	    expect(myList.isEmpty()).toEqual(false);
 	});
 
-	it("should be able to append Two numbers and then return the most recent via Head", function () {
+	it("should be able to append Two numbers and then return the Top via Head", function () {
 	    var myList = new List();
 	    myList.Append(3);
 	    myList.Append(5);
-	    expect(myList.Head()).toEqual(5);
+	    expect(myList.Head()).toEqual(3);
 	});
     
-	it("should be able to append Two numbers and get the head twice and return the first", function () {
+	it("should be able to append Two numbers and get the head twice and return the last", function () {
 	    var myList = new List();
 	    myList.Append(3);
 	    myList.Append(5);
 
 	    myList.Head();
-	    expect(myList.Head()).toEqual(3);
+	    expect(myList.Head()).toEqual(5);
 	});
-    
-	it("should be able to append theww numbers and get the head once and return the middle one", function () {
+
+	it("should be able to append three numbers and get the head three Times and return the last", function () {
+	    var myList = new List();
+	    myList.Append(3);
+	    myList.Append(7);
+	    myList.Append(5);
+
+	    myList.Head();
+	    myList.Head();
+	    expect(myList.Head()).toEqual(5);
+	});
+
+
+    it("should be able to append three numbers and get the head once and return the middle one", function () {
 	    var myList = new List();
 	    myList.Append(3);
 	    myList.Append(5);
@@ -89,11 +97,114 @@ describe("List",function(){
 	    expect(myList.Head()).toEqual(5);
 	});
 
+    // Prepend - Head
+    
+    it("should be able to Prepend one number and not be empty", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        expect(myList.isEmpty()).toEqual(false);
+    });
+
+    it("should be able to Prepend one number and then return it via Head", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        expect(myList.Head()).toEqual(3);
+    });
+    
+
+    it("should be able to Preppend one number then Head() once and be be empty", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Head();
+        expect(myList.isEmpty()).toEqual(true);
+    });
+
+    it("should be able to Prepend 5 numbers then Head() five times and be be empty", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Prepend(5);
+        myList.Prepend(2);
+        myList.Prepend(6);
+        myList.Prepend(7);
+        myList.Head();
+        myList.Head();
+        myList.Head();
+        myList.Head();
+        myList.Head();
+        expect(myList.isEmpty()).toEqual(true);
+    });
+
+    it("should be able to Prepend two numbers and not be empty", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Prepend(5);
+        expect(myList.isEmpty()).toEqual(false);
+    });
+
+    it("should be able to Prepend Two numbers and then return the bottom via Head", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Prepend(5);
+        expect(myList.Head()).toEqual(5);
+    });
+
+    it("should be able to Prepend Two numbers and get the head twice and return the first", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Prepend(5);
+
+        myList.Head();
+        expect(myList.Head()).toEqual(3);
+    });
+
+    it("should be able to Prepend three numbers and get the head three Times and return the last", function () {
+        var myList = new List();
+        myList.Prepend(3);
+        myList.Prepend(7);
+        myList.Prepend(5);
+
+        myList.Head();
+        myList.Head();
+        expect(myList.Head()).toEqual(3);
+    });
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //it("should be able to append one number and then return null via Tail", function () {
+    //    var myList = new List();
+    //    myList.Append(3);
+    //    expect(myList.Tail()).toEqual(null);
+    //});
 
 
 
@@ -111,20 +222,6 @@ describe("List",function(){
 
 
 
-
-
-
-    //it("should be able to Prepend one number and not be empty", function () {
-    //    var myList = new List();
-    //    myList.Prepend(3);
-    //    expect(myList.isEmpty()).toEqual(false);
-    //});
-
-    //it("should be able to Prepend one number and then return it via Head", function () {
-    //    var myList = new List();
-    //    myList.Prepend(3);
-    //    expect(myList.Head()).toEqual(3);
-    //});
 
     //it("should be able to Prepend one number and then return null via Tail", function () {
     //    var myList = new List();
