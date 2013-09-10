@@ -1,29 +1,36 @@
 function List() {
 
-    this.value = null;
-
-    this.Append = function(value) {
-        this.value = value;
+    this.firstNode = null;
+    
+    this.Append = function (value) {
+        if (this.firstNode == null) {
+            this.firstNode = new Node(value);
+        } else {
+            var oldTop = this.firstNode;
+            var newNode = new Node(value);
+            newNode.setNextNode(oldTop);
+            this.firstNode = newNode;
+        }
     };
     
     this.Prepend = function (value) {
-        this.value = value;
-    };
-
-    this.isEmpty = function() {
-
-        if (this.value == null) {
-            return true;
-        } else {
-            return false;
+        if (this.firstNode == null) {
+            this.firstNode = new Node(value);
         }
     };
 
-    this.Head = function () {
-        if (this.value == null) {
+    this.isEmpty = function() {
+        return this.firstNode == null;
+    };
+
+    this.Head = function() {
+        if (this.firstNode == null) {
             return null;
         } else {
-            return this.value;
+            var oldHead = this.firstNode;
+            this.firstNode = oldHead.getNextNode();
+            oldHead.setNextNode(null);
+            return oldHead.getElement();
         }
     };
 
