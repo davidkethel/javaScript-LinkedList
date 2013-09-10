@@ -1,12 +1,30 @@
 function List() {
 
+    this.value = null;
 
-    this.isEmpty = function() {
-        return true;
+    this.Append = function(value) {
+        this.value = value;
+    };
+    
+    this.Prepend = function (value) {
+        this.value = value;
     };
 
-    this.Head = function() {
-        return null;
+    this.isEmpty = function() {
+
+        if (this.value == null) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    this.Head = function () {
+        if (this.value == null) {
+            return null;
+        } else {
+            return this.value;
+        }
     };
 
 
