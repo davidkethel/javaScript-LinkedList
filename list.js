@@ -41,8 +41,14 @@ function List() {
 
 
     this.Tail = function () {
-        return null;
-        //return null;
+        if ( this.firstNode == null || this.firstNode.getNextNode() == null) {
+            return null;
+        } else {
+
+            var returnList = new List();
+            returnList.Append(this.firstNode.getNextNode().getElement());
+            return returnList;
+        }
     };
 
 }
