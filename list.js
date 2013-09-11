@@ -49,8 +49,12 @@ function List() {
             returnList.Append(this.firstNode.getNextNode().getElement());
             return returnList;
         }
-    };
+    };    
 
+
+    this.isEquivalent = function(compareList) {
+        return true;
+    };
 }
 
 

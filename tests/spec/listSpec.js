@@ -77,6 +77,20 @@ describe("List",function() {
 	    expect(myList.Tail()).toBeNull();
 	});
     
+
+    // Equivalent
+    
+
+	it("Should be able to compare 2 empty lists", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	});
+
+
+
+
+
     // Append - Head
 
 	it("should be able to append one number and not be empty", function () {
@@ -240,22 +254,22 @@ describe("List",function() {
 
     // Append - Tail
 
-    it("should be able to append one number and Tail will be null", function () {
-        var myList = new List();
-        myList.Append(3);
-        expect(myList.Tail()).toEqual(null);
-    });
+    //it("should be able to append one number and Tail will be null", function () {
+    //    var myList = new List();
+    //    myList.Append(3);
+    //    expect(myList.Tail()).toEqual(null);
+    //});
 
-    it("should be able to append two number and Tail will be a list with the last item", function () {
-        var myList = new List();
-        myList.Append(3);
-        myList.Append(5);
+    //it("should be able to append two number and Tail will be a list with the last item", function () {
+    //    var myList = new List();
+    //    myList.Append(3);
+    //    myList.Append(5);
         
-        var expectedList = new List();
-        expectedList.Append(5);
-        expect(myList.Tail()).toBeListequivalent(expectedList);
+    //    var expectedList = new List();
+    //    expectedList.Append(5);
+    //    expect(myList.Tail()).toBeListequivalent(expectedList);
 
-    });
+    //});
 
 
 
