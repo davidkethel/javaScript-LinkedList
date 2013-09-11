@@ -50,9 +50,20 @@ function List() {
             return returnList;
         }
     };    
+    6
 
-
-    this.isEquivalent = function(compareList) {
+    this.isEquivalent = function (compareList) {
+        
+        if (this.firstNode == null && compareList.firstNode == null) {
+            return true;
+        }
+        
+        if ((this.firstNode == null && compareList.firstNode != null) || (this.firstNode != null && compareList.firstNode == null)) {
+            return false;
+        } else if (this.firstNode.getElement() != compareList.firstNode.getElement()) {
+            return false;
+        }
+        
         return true;
     };
 }

@@ -79,12 +79,69 @@ describe("List",function() {
     
 
     // Equivalent
-    
-
 	it("Should be able to compare 2 empty lists", function () {
 	    var myList1 = new List();
 	    var myList2 = new List();
 	    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	});
+
+
+
+	it("Should be able to compare 1 Empty and 1 Appeneded Item In List", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList2.Append(3);
+	    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	});
+
+
+	it("Should be able to compare 1 Empty and 1 Prepended item In List", function () {
+	    var myList1 = new List();
+	    myList1.Prepend(3);
+	    var myList2 = new List();
+	    
+	    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	});
+    
+	it("Should be able to compare 1 Empty and 1 Appeneded then 1 Prepended Item In List", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList2.Append(3);
+	    myList2.Prepend(4);
+	    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	});
+
+    it("Should be able to compare 1 Empty and 1 Appeneded Then headed to empty List", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList2.Append(3);
+	    myList2.Head();
+	    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	});
+    
+	it("Should be able to compare 1 Empty and 1 Prepended Then headed to empty List", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList2.Prepend(3);
+	    myList2.Head();
+	    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	});
+    
+	it("Should be able to compare 2 lists with one same item", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList1.Prepend(3);
+	    myList2.Prepend(3);
+	    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	});
+
+
+	it("Should be able to compare 2 lists with one different item", function () {
+	    var myList1 = new List();
+	    var myList2 = new List();
+	    myList1.Prepend(3);
+	    myList2.Prepend(4);
+	    expect(myList1.isEquivalent(myList2)).toEqual(false);
 	});
 
 
