@@ -77,6 +77,77 @@ describe("List",function() {
 	    expect(myList.Tail()).toBeNull();
 	});
     
+
+    // Equivalent
+	//it("Should be able to compare 2 empty lists", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	//});
+
+
+
+	//it("Should be able to compare 1 Empty and 1 Appeneded Item In List", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList2.Append(3);
+	//    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	//});
+
+
+	//it("Should be able to compare 1 Empty and 1 Prepended item In List", function () {
+	//    var myList1 = new List();
+	//    myList1.Prepend(3);
+	//    var myList2 = new List();
+	    
+	//    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	//});
+    
+	//it("Should be able to compare 1 Empty and 1 Appeneded then 1 Prepended Item In List", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList2.Append(3);
+	//    myList2.Prepend(4);
+	//    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	//});
+
+    //it("Should be able to compare 1 Empty and 1 Appeneded Then headed to empty List", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList2.Append(3);
+	//    myList2.Head();
+	//    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	//});
+    
+	//it("Should be able to compare 1 Empty and 1 Prepended Then headed to empty List", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList2.Prepend(3);
+	//    myList2.Head();
+	//    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	//});
+    
+	//it("Should be able to compare 2 lists with one same item", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList1.Prepend(3);
+	//    myList2.Prepend(3);
+	//    expect(myList1.isEquivalent(myList2)).toEqual(true);
+	//});
+
+
+	//it("Should be able to compare 2 lists with one different item", function () {
+	//    var myList1 = new List();
+	//    var myList2 = new List();
+	//    myList1.Prepend(3);
+	//    myList2.Prepend(4);
+	//    expect(myList1.isEquivalent(myList2)).toEqual(false);
+	//});
+
+
+
+
+
     // Append - Head
 
 	it("should be able to append one number and not be empty", function () {
@@ -254,12 +325,36 @@ describe("List",function() {
         var expectedList = new List();
         expectedList.Append(5);
         expect(myList.Tail()).toBeListequivalent(expectedList);
+    });
 
+
+    it("should be able to append three numbers and Tail will be a list with the last 2 item", function () {
+        var myList = new List();
+        myList.Append(3);
+        myList.Append(5);
+        myList.Append(7);
+
+        var expectedList = new List();
+        expectedList.Append(5);
+        expectedList.Append(7);
+        expect(myList.Tail()).toBeListequivalent(expectedList);
     });
 
 
 
+    //it("should be able to append 4 numbers and Tail will be a list with the last 3 item", function () {
+    //    var myList = new List();
+    //    myList.Append(3);
+    //    myList.Append(5);
+    //    myList.Append(7);
+    //    myList.Append(9);
 
+    //    var expectedList = new List();
+    //    expectedList.Append(5);
+    //    expectedList.Append(7);
+    //    expectedList.Append(9);
+    //    expect(myList.Tail()).toBeListequivalent(expectedList);
+    //});
 
 
 
