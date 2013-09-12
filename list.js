@@ -47,10 +47,34 @@ function List() {
 
             var returnList = new List();
             returnList.Append(this.firstNode.getNextNode().getElement());
+            
+            if (this.firstNode.getNextNode().getNextNode() != null) {
+                returnList.Append(this.firstNode.getNextNode().getNextNode().getElement());
+            }
+            
+
+            //if (this.firstNode.getNextNode().getNextNode().getNextNode() != null) {
+            //    returnList.Append(this.firstNode.getNextNode().getNextNode().getNextNode().getElement());
+            //}
             return returnList;
         }
-    };
+    };    
+    
 
+    //this.isEquivalent = function (compareList) {
+        
+    //    if (this.firstNode == null && compareList.firstNode == null) {
+    //        return true;
+    //    }
+        
+    //    if ((this.firstNode == null && compareList.firstNode != null) || (this.firstNode != null && compareList.firstNode == null)) {
+    //        return false;
+    //    } else if (this.firstNode.getElement() != compareList.firstNode.getElement()) {
+    //        return false;
+    //    }
+        
+    //    return true;
+    //};
 }
 
 
